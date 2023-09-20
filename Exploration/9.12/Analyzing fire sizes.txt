@@ -1,0 +1,37 @@
+1. **Descriptive Statistics for Fire Sizes**:
+    - Generate descriptive statistics (mean, median, mode, standard deviation, min, and max) for `FIRE_SIZE`.
+    - Visualization: Display this using a **box plot** for fire sizes. This will also show outliers.
+
+2. **Fire Size Distribution**:
+    - Understand how fire sizes are distributed across different categories.
+    - Visualization: Use a **histogram** to show the distribution of fire sizes. You can also categorize them using the `FIRE_SIZE_CLASS` to visualize the number of fires in each size class.
+
+3. **Fire Causes**:
+    - Count the number of occurrences of each cause.
+    - Visualization: Use a **bar chart** to display the number of fires by their `NWCG_GENERAL_CAUSE`.
+
+4. **Relationship Between Fire Sizes and Causes**:
+    - Group the data by the `NWCG_GENERAL_CAUSE` and then compute the average (or median) fire size for each cause.
+    - Visualization: Display this using a **bar chart** showing average (or median) fire size for each cause.
+
+5. **Fire Size by Year**:
+    - Examine if there's any trend in fire sizes over the years. For instance, are fires getting larger?
+    - Visualization: Plot `FIRE_YEAR` against average `FIRE_SIZE` in a **line chart**.
+
+6. **Fire Causes Over Time**:
+    - Analyze if certain causes of fires become more prominent over time.
+    - Visualization: A **stacked bar chart** or **area chart** with `FIRE_YEAR` on the x-axis and number of fires on the y-axis. Each cause would be represented by a different color.
+
+7. **Fire Size and Location**:
+    - To determine if there are geographic patterns related to fire size.
+    - Visualization: Use a **map** where each fire is represented by a dot. The size of the dot can correspond to the fire size, and the color of the dot can represent its cause.
+
+8. **Heatmap of Fire Causes vs. Fire Size Classes**:
+    - This would give a quick overview of which causes are most associated with each size class.
+    - Visualization: A **heatmap** where rows are `NWCG_GENERAL_CAUSE` and columns are `FIRE_SIZE_CLASS`. Cells would be colored based on the number of occurrences.
+
+9. **Correlation Analysis**:
+    - If you have additional continuous variables, you could check if there's any correlation between those variables and `FIRE_SIZE`.
+    - Visualization: A **correlation matrix** or **scatter plots** for selected pairs of variables.
+
+10. **Consider External Factors**:

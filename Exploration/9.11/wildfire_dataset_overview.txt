@@ -1,0 +1,165 @@
+### **Wildfire Dataset Overview**
+
+**Snapshot of Data (First 5 Rows):**
+1. **OBJECTID**: A unique identifier for each record, ranging from 1 onwards.
+2. **Shape**: Contains spatial data. 
+3. **FOD_ID and FPA_ID**: Other identifiers. 
+4. **SOURCE_SYSTEM_TYPE**: The system where the data originated, e.g., "FED".
+5. **NWCG_REPORTING_UNIT_NAME**: Names of reporting units like "Plumas National Forest".
+6. **LATITUDE & LONGITUDE**: Geographic coordinates of the fire.
+
+(And other columns that provide additional details about the wildfires...)
+
+**NWCG_REPORTING_AGENCY**: This specifies the agency responsible for reporting the fire incident.
+
+**NWCG_REPORTING_UNIT_ID**: This represents the unique identifier for the reporting unit. Example: "USCAPNF".
+
+**SOURCE_REPORTING_UNIT**: This column provides an identifier for the unit where the data originated. For instance, "0511".
+
+**SOURCE_REPORTING_UNIT_NAME**: This gives the name of the unit/source that reported the fire. It complements the previous column.
+
+**LOCAL_FIRE_REPORT_ID**: An identifier that might be more relevant at a local level, with many missing values (1,825,891 rows missing).
+
+**LOCAL_INCIDENT_ID**: Another identifier for the incident which is likely more locally relevant. Missing in 744,411 rows.
+
+**FIRE_CODE**: A code associated with the fire. It's missing in 1,906,149 rows.
+
+**FIRE_NAME**: This gives the name of the fire. An essential column if you're identifying or referring to specific incidents. There are 964,444 missing values.
+
+**ICS_209_PLUS_INCIDENT_JOIN_ID & ICS_209_PLUS_COMPLEX_JOIN_ID**: These columns likely link to other datasets or systems. Both have a significant number of missing values.
+
+**MTBS_ID & MTBS_FIRE_NAME**: These columns might relate to another tracking or monitoring system specific to fires. Both have a considerable number of missing values.
+
+**COMPLEX_NAME**: Name of the fire complex, if applicable. Most values are missing in this column.
+
+**DISCOVERY_DATE**: The date when the fire was discovered.
+
+**DISCOVERY_DOY**: Represents the day of the year when the fire was discovered. Helps in understanding during which part of the year most fires are discovered.
+
+**DISCOVERY_TIME**: The specific time when the fire was detected. Missing in 789,095 rows.
+
+**NWCG_CAUSE_CLASSIFICATION**: Classification of the cause of the fire.
+
+**NWCG_GENERAL_CAUSE**: Provides a broader category or reason for the cause of the fire.
+
+**NWCG_CAUSE_AGE_CATEGORY**: A column that might indicate the age category of the cause (like if it was due to young individuals or older individuals). However, it has many missing values.
+
+**CONT_DATE & CONT_DOY**: These represent the date and day of the year, respectively, when the fire was contained or controlled.
+
+**CONT_TIME**: The time when the fire was contained. It has 989,902 missing values.
+
+**FIRE_SIZE_CLASS**: A classification based on the size of the fire, which can be useful for quick categorizations like small, medium, large, etc.
+
+**OWNER_DESCR**: Description of the owner of the land or the authority responsible for it.
+
+**STATE**: The U.S. state where the fire occurred.
+
+**COUNTY**: The specific county within the state where the fire took place. Missing in 665,779 rows.
+
+**FIPS_CODE & FIPS_NAME**: These are Federal Information Processing Standards codes and names, which are standardized codes to represent counties and county-equivalent entities.
+
+
+### **Descriptive Statistics on Key Columns**:
+- **FIRE_YEAR**: The dataset contains fire incidents from the years 1992 to 2020.
+  
+- **DISCOVERY_DOY & CONT_DOY**: Fires are discovered throughout the year, from the 1st day to the 366th day. Similarly, they get contained throughout the year.
+
+- **FIRE_SIZE**: Fires vary in size, with some being extremely small (minimum size close to 0) and some extremely large (maximum size of 662,700 acres).
+
+---
+
+### **Data Integrity Check**:
+Clumns with missing values include:
+
+1. **LOCAL_FIRE_REPORT_ID**: Missing for 1,825,891 rows
+2. **LOCAL_INCIDENT_ID**: Missing for 744,411 rows
+3. **FIRE_CODE**: Missing for 1,906,149 rows
+4. **FIRE_NAME**: Missing for 964,444 rows
+5. **ICS_209_PLUS_INCIDENT_JOIN_ID**: Missing for 2,270,072 rows
+6. **ICS_209_PLUS_COMPLEX_JOIN_ID**: Missing for 2,298,627 rows
+7. **MTBS_ID & MTBS_FIRE_NAME**: Missing for 2,289,696 rows (both columns)
+8. **COMPLEX_NAME**: Missing for 2,297,619 rows
+9. **DISCOVERY_TIME**: Missing for 789,095 rows
+10. **NWCG_CAUSE_AGE_CATEGORY**: Missing for 2,228,039 rows
+11. **CONT_DATE**: Missing for 894,813 rows
+12. **CONT_DOY**: Missing for 894,813 rows
+13. **CONT_TIME**: Missing for 989,902 rows
+14. **COUNTY**: Missing for 665,779 rows
+15. **FIPS_CODE**: Missing for 665,779 rows
+16. **FIPS_NAME**: Missing for 665,780 rows
+
+### **Data Types**:
+
+1. **OBJECTID**: A unique identifier for each record. Integer.
+2. **FOD_ID**: Another unique identifier specifically for each fire occurrence. It's also an integer.
+3. **FPA_ID**: This stands for "Fire program analysis system ID." It's a string, suggesting it might contain a combination of numbers, letters, or other characters.
+4. **SOURCE_SYSTEM_TYPE**: Tells us about the kind of system the data originates from, stored as a string.
+5. **SOURCE_SYSTEM**: This is more specific than the previous column, detailing the exact system where the data was taken from.
+6. **NWCG_REPORTING_AGENCY**: An acronym for the reporting agency under the National Wildfire Coordinating Group.
+7. **NWCG_REPORTING_UNIT_ID**: A unique identifier for the unit reporting the fire.
+8. **NWCG_REPORTING_UNIT_NAME**: A descriptive name of the reporting unit.
+9. **SOURCE_REPORTING_UNIT**: The ID of the original reporting unit.
+10. **SOURCE_REPORTING_UNIT_NAME**: The name of the original reporting unit.
+11. **LOCAL_FIRE_REPORT_ID**: An identifier for the local fire report.
+12. **LOCAL_INCIDENT_ID**: A local reference for the fire incident.
+13. **FIRE_CODE**: A unique code or identifier for the fire.
+14. **FIRE_NAME**: The name assigned to the fire.
+15. **ICS_209_INCIDENT_NUMBER**: If available, this is the incident number from the ICS-209 report.
+16. **ICS_209_NAME**: The name of the incident as reported in the ICS-209.
+17. **MTBS_ID**: If available, this ID refers to "Monitoring Trends in Burn Severity."
+18. **MTBS_FIRE_NAME**: The name of the fire incident as per MTBS.
+19. **COMPLEX_NAME**: If the fire was part of a larger complex, this column would give its name.
+20. **FIRE_YEAR**: The year the fire was reported, stored as an integer.
+21. **DISCOVERY_DATE**: A Julian Date floating-point representation of the date the fire was discovered.
+22. **DISCOVERY_DOY**: The day of the year when the fire was found, given as an integer.
+23. **DISCOVERY_TIME**: The time when the fire was found, formatted as HHMM.
+24. **STAT_CAUSE_CODE**: A numeric code representing the stated reason behind the fire.
+25. **STAT_CAUSE_DESCR**: A string description detailing the fire's cause.
+26. **CONT_DATE**: The Julian date when the fire was contained, stored as a float.
+27. **CONT_DOY**: The day of the year when containment was achieved.
+28. **CONT_TIME**: The exact time the fire was contained, in HHMM format.
+29. **FIRE_SIZE**: The fire's size in acres, a floating-point number.
+30. **FIRE_SIZE_CLASS**: A class code (A-G) representing the fire's size.
+31. **LATITUDE & LONGITUDE**: The geographic coordinates where the fire occurred.
+32. **OWNER_CODE**: An integer code representing the owner or jurisdiction of the affected land.
+33. **OWNER_DESCR**: A description of the land's owner or the jurisdiction.
+34. **STATE**: The US state where the fire took place.
+35. **COUNTY**: The specific county or its equivalent where the fire occurred.
+36. **FIPS_CODE**: The Federal Information Processing Standards code for the fire's location.
+37. **FIPS_NAME**: The name linked with the provided FIPS code.
+38. **Shape**: This column holds binary data for spatial representation, mostly used in GIS systems.
+
+### Potential Uses
+
+1. **Trend Analysis**: Identify trends in wildfire occurrences over years, months, or even specific days of the year. This can provide insights into the seasonality of fires and how it has evolved over time.
+
+2. **Geospatial Analysis**:
+   - **Hotspot Analysis**: Identify areas that are particularly prone to wildfires using the latitude and longitude columns combined with GIS tools.
+   - **Proximity Analysis**: Determine how close wildfires have been to major urban areas, infrastructure, or places of interest.
+   - **Mapping**: Visualize the data on maps to provide a spatial understanding of wildfire occurrences.
+
+3. **Cause Analysis**: Utilize the `STAT_CAUSE_DESCR` column to identify the most common causes of wildfires. This can be pivotal in preventive efforts.
+
+4. **Response Time Analysis**: By comparing `DISCOVERY_DATE` and `CONT_DATE` (or their time equivalents), one can assess how quickly wildfires are contained after they're discovered.
+
+5. **Fire Size Analysis**: Use the `FIRE_SIZE` and `FIRE_SIZE_CLASS` attributes to categorize fires by size and understand their distribution and frequency.
+
+6. **Agency Analysis**: Evaluate which agencies (`NWCG_REPORTING_AGENCY`) report the most fires, and potentially, which ones are most effective at early detection and containment.
+
+7. **Land Ownership and Jurisdiction**: Assess how wildfires impact lands of different ownerships (`OWNER_DESCR`) to prioritize preventative measures for high-risk areas.
+
+8. **Predictive Modeling**:
+   - **Risk Assessment**: Develop models to predict high-risk areas for future wildfires based on historical data.
+   - **Cause Prediction**: Based on conditions, time of year, and other variables, predict the potential cause of a fire if one were to break out.
+
+9. **Economic Impact Study**: Combine this dataset with economic data to assess the economic impact of wildfires on affected counties or states.
+
+10. **Environmental Studies**: Understand the environmental impacts of wildfires, especially in areas that have faced recurrent fires.
+
+11. **Public Awareness and Education**: The dataset can be used to generate reports, infographics, or interactive dashboards to educate the public about wildfires, their causes, and safety measures.
+
+12. **Policy Formulation**: Governments and local authorities can use the insights from this dataset to frame policies related to forest management, land use, and fire prevention.
+
+13. **Research**: Academics and researchers can use this data to study various aspects of wildfires, from environmental and ecological perspectives to social and economic impacts.
+
+14. **Integration with Other Datasets**: This dataset can be combined with meteorological data to study the relationship between weather patterns and fire occurrences, or with demographic data to study the human impact.

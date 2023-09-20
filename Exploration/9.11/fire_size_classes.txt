@@ -1,0 +1,17 @@
+### Fire Size Classes:
+
+- **Class A**: 0 to 0.25 acres
+- **Class B**: 0.26 to 9.9 acres
+- **Class C**: 10 to 99.9 acres
+- **Class D**: 100 to 299 acres
+- **Class E**: 300 to 999 acres
+- **Class F**: 1000 to 4999 acres
+- **Class G**: 5000 acres and more
+
+The primary reason behind classifying fires by their sizes is to assist agencies in resource allocation, reporting, and statistical analysis. For instance:
+
+- **Class A and B fires** are relatively small and typically can be contained with local resources.
+  
+- **Class C and D fires** are larger and might need regional resources, including more crews, larger equipment, or aircraft support.
+  
+- **Class E, F, and G fires** are significant events. They can be resource-intensive and challenging to manage, often requiring national resources, inter-agency coordination, and sometimes even international assistance.

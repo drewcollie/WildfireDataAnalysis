@@ -1,0 +1,63 @@
+Create Calculated Fields for Ownership Analysis:
+
+Average Time to Control (ATC):
+
+Navigate to Analysis > Create Calculated Field.
+Name it "Average Time to Control".
+Formula: SUM([Duration]) / COUNT([Fire ID])
+(Assuming "Duration" is the name of the field that captures the length of the fire and "Fire ID" uniquely identifies each fire.)
+Acres Burned per Hour (ABH):
+
+Create Calculated Field: "Acres Burned per Hour".
+Formula: SUM([Acres Burned]) / SUM([Duration in Hours])
+(Replace "Duration in Hours" with whatever your duration field is named, ensuring it's in hours.)
+Resources Used per Acre (RUA):
+
+Create Calculated Field: "Resources Used per Acre".
+Formula: SUM([Resources Used]) / SUM([Acres Burned])
+(Replace "Resources Used" with the relevant field from your dataset.)
+Fire Frequency:
+
+Median Fire Size:
+
+Create Calculated Field: "Median Fire Size".
+Formula: MEDIAN([Acres Burned])
+Control Efficiency Score (CES):
+
+Create Calculated Field: "Control Efficiency Score".
+Formula: (SUM([Acres Burned]) / SUM([Duration in Hours])) / (SUM([Resources Used]) / SUM([Acres Burned]))
+
+##Insights and Observations##
+
+1. **Variability in Control Efficiency Score (CES) by Owner**:
+   - Owners like `MUNICIPAL/LOCAL` and `NPS` have notably higher CES than others, suggesting they might have better efficiency in controlling fires when considering the number of acres burned and the time taken.
+   - In contrast, owners like `COUNTY`, `BLM`, and `MISSING/NOT SPECIFIED` have relatively lower CES.
+
+2. **Count of Fires vs. CES**:
+   - `USFS` handles the largest number of fires, yet their CES is on the higher side, suggesting they are reasonably efficient given the number of incidents they handle.
+   - In contrast, while `COUNTY` handles a much smaller number of fires, their CES is lower, hinting at potential inefficiencies or challenges unique to the fires they deal with.
+
+3. **Average Time to Control**:
+   - Entities like `BOR` and `COUNTY` have the lowest average time to control. This might suggest faster response times or smaller fires that are easier to manage.
+   - `TRIBAL` and `FWS` have the longest average times to control. This could be due to larger fires, harder terrains, or other complexities.
+
+4. **Acres Burned per Hour**:
+   - High values for entities like `COUNTY` and `MISSING/NOT SPECIFIED` could indicate fast-spreading fires, potentially hinting at the nature or type of fires these entities are dealing with.
+
+5. **Comparison of Fire Sizes**:
+   - While `MUNICIPAL/LOCAL` has one of the highest CES, their median fire size is among the lowest, suggesting they efficiently control smaller fires. The efficiency may not necessarily translate to larger fires.
+   - Conversely, `TRIBAL` has a high median fire size but also a relatively high CES, indicating efficiency even with larger fires.
+
+6. **Total Acres Burned**:
+   - `BLM` and `USFS` have dealt with the highest acreages of fires. Their CES values, when seen in this context, provide insight into their performance given the vast areas they cover.
+
+7. **Data Integrity**:
+   - The presence of categories like `MISSING/NOT SPECIFIED` and `UNDEFINED FEDERAL` suggests gaps in the data collection or categorization process. It might be worth revisiting the data source or the data collection method to reduce such inconsistencies in the future.
+
+8. **Potential for Deeper Analysis**:
+   - Consider factors not present in this table. For instance, it might be useful to know the budget or resources each entity has. A well-funded entity with a low CES could have different challenges than an underfunded one with a similar score.
+
+9. **Broader Implications**:
+   - Entities with low CES might benefit from additional training, resources, or collaborative strategies with those having higher CES. Insights from this data could guide policy decisions or resource allocation.
+
+Essential to consider external factors and context. For example, different entities might be operating in vastly different terrains, facing unique challenges, or dealing with various types of fires (grass vs. forest, etc.). 

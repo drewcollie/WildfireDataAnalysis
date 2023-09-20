@@ -1,0 +1,29 @@
+**Descriptive Statistics for Fire Size**:
+
+- **Count**: 2,303,566 
+  - This indicates the number of fire records or rows in the dataset.
+
+- **Mean (Average) Fire Size**: 78.16 acres
+  - On average, fires covered an area of approximately 78.16 acres.
+
+- **Standard Deviation**: 2,630.83 acres
+  - This measures the amount of variation in fire sizes from the average. A large standard deviation indicates that the fire sizes can vary greatly from the average size.
+
+- **Minimum Fire Size**: 0.00001 acres 
+  - This is the smallest recorded fire size in the dataset.
+
+- **25th Percentile**: 0.1 acres
+  - 25% of the fires in the dataset are 0.1 acres or smaller. This is the size below which a given percentage of observations in a group fall.
+
+- **Median (50th Percentile) Fire Size**: 0.8 acres
+  - Half of the fires in the dataset are less than or equal to 0.8 acres in size.
+
+- **75th Percentile**: 3 acres
+  - 75% of the fires in the dataset are 3 acres or smaller. Only 25% of fires exceed this size.
+
+- **Maximum Fire Size**: 662,700 acres
+  - This is the largest recorded fire size in the dataset.
+
+---
+
+These statistics provide an overview of the distribution of fire sizes in the dataset. From this, we can see that while most fires are relatively small (with 50% being 0.8 acres or less), there are some fires that are significantly larger, with the largest fire being 662,700 acres.

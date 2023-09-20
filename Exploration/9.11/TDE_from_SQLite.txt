@@ -1,0 +1,40 @@
+Creating a Tableau Data Extract (TDE) from an SQLite database and using it for your workbook can be beneficial, especially when working with large datasets. A TDE is a compressed, columnar store of the source data, which can help improve the performance of your visualizations in Tableau. 
+
+Here's a step-by-step guide on how to use a TDE with your SQLite dataset:
+
+1. **Open Tableau Desktop**:
+   Launch Tableau Desktop on your laptop.
+
+2. **Connect to SQLite**:
+   - In the start page of Tableau, under "To a Server," choose "SQLite."
+   - Navigate to the location of your SQLite file (`data/FPA_FOD_20221014.sqlite`) and select it.
+
+3. **Select the Table**:
+   After establishing the connection, select the table "Fires" from the list of available tables.
+
+4. **Drag and Drop or Write Custom SQL (Optional)**:
+   - You can drag and drop the table to the canvas or, if you wish to do some pre-processing or custom querying, you can choose the "New Custom SQL" option.
+   - Write the SQL query if needed and then drag the resulting dataset to the canvas.
+
+5. **Data Source Preview**:
+   At the bottom of the screen, you'll have the option to go to the "Sheet" to start visualizing your data. Before that, let's create a TDE.
+
+6. **Extract the Data**:
+   - In the main window, instead of live, choose "Extract" at the top-right corner.
+   - This will prompt a new window where you can set some extract options, such as filters, aggregation, etc. If you don’t have specific requirements, you can just go with the defaults.
+   - Click the "Extract" button to create the TDE.
+
+7. **Save the Extract**:
+   Once the extract process completes, save the extract (TDE file) to a location on your laptop. Remember, once you save the extract, it will be independent of your SQLite database, meaning updates to the SQLite won't automatically reflect in the TDE.
+
+8. **Build Your Workbook**:
+   Now you can begin to create sheets, dashboards, and stories for your user story. Since you're working with the extract, the performance should be enhanced.
+
+9. **Publishing and Refreshing (Optional)**:
+   - If you're using Tableau Server or Tableau Online, you can publish your workbook.
+   - You can also set up a refresh schedule so that the TDE updates at regular intervals, ensuring your workbook has up-to-date data.
+
+10. **Save Your Workbook**:
+   Don't forget to save your Tableau workbook after creating your visualizations!
+
+By using a TDE, you're leveraging the performance benefits of Tableau's optimized data engine. This is especially valuable for large datasets or when you want to share your workbook with others without giving them direct access to the SQLite database.

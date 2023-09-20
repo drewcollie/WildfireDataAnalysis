@@ -1,0 +1,6 @@
+IF [STATE] = "ME" OR [STATE] = "NH" OR [STATE] = "VT" OR [STATE] = "MA" OR [STATE] = "RI" OR [STATE] = "CT" OR [STATE] = "NY" OR [STATE] = "PA" OR [STATE] = "NJ" THEN "Northeast"
+ELSEIF [STATE] = "WI" OR [STATE] = "MI" OR [STATE] = "IL" OR [STATE] = "IN" OR [STATE] = "OH" OR [STATE] = "MO" OR [STATE] = "ND" OR [STATE] = "SD" OR [STATE] = "NE" OR [STATE] = "KS" OR [STATE] = "MN" OR [STATE] = "IA" THEN "Midwest"
+ELSEIF [STATE] = "DE" OR [STATE] = "FL" OR [STATE] = "GA" OR [STATE] = "MD" OR [STATE] = "NC" OR [STATE] = "SC" OR [STATE] = "VA" OR [STATE] = "DC" OR [STATE] = "WV" OR [STATE] = "AL" OR [STATE] = "KY" OR [STATE] = "MS" OR [STATE] = "TN" OR [STATE] = "AR" OR [STATE] = "LA" OR [STATE] = "OK" OR [STATE] = "TX" THEN "South"
+ELSEIF [STATE] = "AZ" OR [STATE] = "CO" OR [STATE] = "ID" OR [STATE] = "MT" OR [STATE] = "NV" OR [STATE] = "NM" OR [STATE] = "UT" OR [STATE] = "WY" OR [STATE] = "AK" OR [STATE] = "CA" OR [STATE] = "HI" OR [STATE] = "OR" OR [STATE] = "WA" THEN "West"
+ELSE "Unknown"
+END
